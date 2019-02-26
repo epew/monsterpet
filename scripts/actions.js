@@ -35,10 +35,7 @@ function resetSelectedMonster() {
 
 	console.log('wasSelected actions  ', wasSelected);
 
-	if(!wasSelected.isNaN()) {
-		return wasSelected;
-	}
-
-	return false;
+	
+	return wasSelected;
 
 }

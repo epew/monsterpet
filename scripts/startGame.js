@@ -26,9 +26,9 @@ characterContainer[0].addEventListener('click', function(e){
 
 		console.log('wasSelected .. . .', wasSelected);
 
-		if(!wasSelected.isNaN()) {
-			let id = resetSelectedMonster();
-			removeSelectedClass (id);
+		if(wasSelected !== undefined) {
+		
+			removeSelectedClass (wasSelected);
 		}
 
 		console.log('resetSelectedMonster ', resetSelectedMonster());
@@ -65,6 +65,8 @@ characterMonster.talk();
 
 function removeSelectedClass(id) {
 	console.log('in removeSelectedClass(id) ', id);
+
+	document.getElementById(id).classList.remove("selected-character");
 
 
 
