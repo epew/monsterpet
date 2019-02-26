@@ -37,6 +37,10 @@ body {
 	color: #FFF;
 }
 
+.action-btn:disabled{
+	opacity: 0.6;
+}
+
 .action-btn:disabled:hover {
 	cursor: default;
 	background-color: #FFF;
@@ -50,7 +54,7 @@ body {
 	padding: 5px;
 	left: 150px;
 	bottom: 10px;
-	background-color: #34B3D6;
+	background-color: #247D95;
 	color: #FFF;
 	width: 150px;
 	border-radius: 5px;

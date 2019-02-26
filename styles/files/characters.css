@@ -43,3 +43,8 @@
 	width: 150px;
 	height: 50px;
 }
+
+.selected-character {
+	border: 5px solid #C26196;
+	border-radius: 5px;
+}
