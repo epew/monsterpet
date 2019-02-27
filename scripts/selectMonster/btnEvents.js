@@ -1,16 +1,20 @@
-let startGame = document.getElementById('play');
+let startGameBtn = document.getElementById('play');
 let welcomeContainer = document.getElementsByClassName("welcome");
 let chooseCharacters = document.getElementsByClassName("choose-characters");
 
-let exitChooseCharacter = document.getElementById("cancel-choose-characters");
+let exitChooseCharacterBtn = document.getElementById("cancel-choose-characters");
 let characterContainer = document.getElementsByClassName("character-container");
 
+let chooseCharacterBtn = document.getElementById("btn-choose");
+let detailsContainer = document.getElementsByClassName("monster-details");
+
+let changeMonsterBtn = document.getElementById("change-monseter");
 
 /*
 * When you Click the 'PLAY' button, 
 * second screen (Choose a Monster) is shown
 */
-startGame.addEventListener('click', function(e) {
+startGameBtn.addEventListener('click', function(e) {
 	
 	welcomeContainer[0].classList.add("hide-container");
 	chooseCharacters[0].classList.add("show-container");
@@ -21,7 +25,7 @@ startGame.addEventListener('click', function(e) {
 * If you do not want to select a monster anymore and click the 'x' button,
 * Second screen will be hidden and the first one will be shown.
 */
-exitChooseCharacter.addEventListener('click', function(e){
+exitChooseCharacterBtn.addEventListener('click', function(e){
 
 	welcomeContainer[0].classList.remove("hide-container");
 	chooseCharacters[0].classList.remove("show-container");
@@ -46,6 +50,31 @@ characterContainer[0].addEventListener('click', function(e){
 
 		e.target.classList.add("selected-character");
 
+		selectedMonster = monsters[selected];
+
 	} catch {}
 	
+});
+
+/*
+* Showing the details container about the selected monster
+*/
+chooseCharacterBtn.addEventListener('click', function(e){
+	console.log("Great! This is your monster !", selectedMonster);
+
+	chooseCharacters[0].classList.remove("show-container");
+	detailsContainer[0].classList.add("show-container");
+});
+
+/*
+* Change Monster
+*/
+changeMonsterBtn.addEventListener('click', function(e){
+
+	selectedMonster = {};
+	resetSelectedMonster();
+
+	chooseCharacters[0].classList.add("show-container");
+	detailsContainer[0].classList.remove("show-container");
+
 });

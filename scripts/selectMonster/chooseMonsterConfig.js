@@ -1,37 +1,43 @@
-let basicMonster = function(id, imageLink, isSelected) {
+/*
+* Monsters Constructors
+*/
+let BasicMonster = function(id, imageLink, isSelected) {
 	this.id = id;
 	this.imageLink = imageLink;
 	this.isSelected = isSelected;
 }
 
-let magicMonsetr = function(magic) {
-	this.magic = magic;
+let MagicMonsetr = function(spell) {
+	this.spell = spell;
 }
 
-let specialMonster = function(power, sound){
+let SpecialMonster = function(power, sound){
 	this.power = power;
 	this.sound = sound;
 }
 
+Object.setPrototypeOf(MagicMonsetr, BasicMonster);
+Object.setPrototypeOf(SpecialMonster, BasicMonster);
 
-Object.setPrototypeOf(magicMonsetr, basicMonster);
-Object.setPrototypeOf(specialMonster, basicMonster);
-
-
-console.dir(magicMonsetr);
-console.dir(specialMonster);
-
+console.dir(MagicMonsetr);
+console.dir(SpecialMonster);
 
 let magicMonsters =[];
 let specialMonsters =[];
+let selectedMonster ={};
 
-
+/*
+* Making first half of 'monsters' object from data.js, 
+* 'Magic' and the second half 'Special'
+* and settings some defaults properties
+*/
 for(let i=0; i<monsters.length; i++) {
 
 	let n = monsters.length/2;
 
 	if(i<n) {
-		monster = new magicMonsetr("alohomora");
+
+		monster = new MagicMonsetr("alohomora");
 
 		monster.id = monsters[i].id;
 		monster.imageLink = monsters[i].imageLink;
@@ -41,7 +47,7 @@ for(let i=0; i<monsters.length; i++) {
 
 	} else {
 
-		monster = new specialMonster("fly", "rwar");
+		monster = new SpecialMonster("fly", "rwar");
 
 		monster.id = monsters[i].id;
 		monster.imageLink = monsters[i].imageLink;
@@ -51,7 +57,6 @@ for(let i=0; i<monsters.length; i++) {
 	}
 }
 
-
-console.log(' magicMonsters ', magicMonsters);
-console.log(' specialMonsters ', specialMonsters);
+console.log('magicMonsters ', magicMonsters);
+console.log('specialMonsters ', specialMonsters);
 

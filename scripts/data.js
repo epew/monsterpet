@@ -37,3 +37,24 @@ let monsters = [
 		isSelected: false
 	}
 ];
+
+let spells = [
+	{
+		id:'',
+		name:''
+	}
+]
+
+let powers = [
+	{
+		id: '',
+		name: ''
+	}
+]
+
+let sounds = [
+	{
+		id: '',
+		sound: ''
+	}
+]
