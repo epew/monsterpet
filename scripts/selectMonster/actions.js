@@ -1,9 +1,6 @@
-
-function talk() {
-	console.log(this);
-	console.log(this.sound);
-}
-
+/*
+* Function that loads Monsters from the data.js file
+*/
 function loadCharacters() {
 
 	for(let i=0; i < monsters.length; i++) {
@@ -20,6 +17,9 @@ function loadCharacters() {
 	}
 }
 
+/*
+* Used to reset a selection and disable the 'choose caracter' btn.
+*/
 function resetSelectedMonster() {
 
 	let wasSelected;
@@ -40,6 +40,9 @@ function resetSelectedMonster() {
 	return wasSelected;
 }
 
+/*
+* Removes selected class from a character and disables the choose chracter btn.
+*/
 function removeSelectedClass(id) {
 	document.getElementById(id).classList.remove("selected-character");
 	document.getElementById("btn-choose").disabled = true;
