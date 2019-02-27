@@ -45,6 +45,11 @@
 }
 
 .selected-character {
-	border: 5px solid #C26196;
+	border: 5px solid #34B3D6;
+	border-radius: 5px;
+}
+
+.selected-character:hover{
+	border: 5px solid #359DBA;
 	border-radius: 5px;
 }

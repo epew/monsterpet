@@ -33,9 +33,14 @@ function resetSelectedMonster() {
 		monsters[i].isSelected = false
 	}
 
-	console.log('wasSelected actions  ', wasSelected);
+	if(wasSelected !== undefined) {
+		removeSelectedClass (wasSelected);
+	}
 
-	
 	return wasSelected;
+}
 
+function removeSelectedClass(id) {
+	document.getElementById(id).classList.remove("selected-character");
+	document.getElementById("btn-choose").disabled = true;
 }

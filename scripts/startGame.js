@@ -9,45 +9,21 @@ let selectedMonster = function () {
 	return monstersStatus;
 }
 
-
-
-
-console.log('selectedMonster ', selectedMonster());
-
 characterContainer[0].addEventListener('click', function(e){
 	
 	try {
-		// removeSelectedClass();
-		// resetSelectedMonster();
-
-		console.log('clicked .. . .');
 
 		let wasSelected = resetSelectedMonster();
 
-		console.log('wasSelected .. . .', wasSelected);
-
-		if(wasSelected !== undefined) {
-		
-			removeSelectedClass (wasSelected);
-		}
-
-		console.log('resetSelectedMonster ', resetSelectedMonster());
-
-		
 		let selected = e.target.getAttribute("id");
 		monsters[selected].isSelected = true;
+		document.getElementById("btn-choose").disabled = false;
 
-		console.log('selectedMonster ',selectedMonster());
-
-		
 		e.target.classList.add("selected-character");
 
 	} catch {}
-
 	
 });
-
-
 
 
 let monster = {
@@ -63,11 +39,3 @@ Object.setPrototypeOf(characterMonster, monster);
 
 characterMonster.talk();
 
-function removeSelectedClass(id) {
-	console.log('in removeSelectedClass(id) ', id);
-
-	document.getElementById(id).classList.remove("selected-character");
-
-
-
-}
