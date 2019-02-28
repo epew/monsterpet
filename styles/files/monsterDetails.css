@@ -8,4 +8,8 @@
 .change-monseter-btn{
 	left: 20%;
 	width: 150px;
+
+	border: none;
+    border-bottom: 3px solid #359DBA;
+    height: 30px;
 }
