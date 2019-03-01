@@ -1,0 +1,15 @@
+.monster-details{
+	display: none;
+	position: relative;
+	width: 500px;
+	height: 580px;
+}
+
+.change-monseter-btn{
+	left: 20%;
+	width: 150px;
+
+	border: none;
+    border-bottom: 3px solid #359DBA;
+    height: 30px;
+}
